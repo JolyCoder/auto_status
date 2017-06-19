@@ -34,7 +34,6 @@ vk2 = vk_api.VkApi(login = 'tvaliaschvili1234@gmail.com', password = '8988872685
 vk.auth()
 vk2.auth()
 a = 1
-k = 0
 
 
 
