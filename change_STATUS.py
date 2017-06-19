@@ -23,8 +23,8 @@ def captcha_handler(captcha):
     return captcha.try_again(key)
 
 key = ""
-vk = vk_api.VkApi(login = '79888726851', password = 'Andrew1975', captcha_handler=captcha_handler)
-vk2 = vk_api.VkApi(login = 'tvaliaschvili1234@gmail.com', password = '89888726851i', captcha_handler=captcha_handler)
+vk = vk_api.VkApi(login = 'login', password = 'password', captcha_handler=captcha_handler)
+vk2 = vk_api.VkApi(login = 'login', password = 'password', captcha_handler=captcha_handler)
 vk.auth()
 vk2.auth()
 a = 1
