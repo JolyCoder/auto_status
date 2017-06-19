@@ -2,6 +2,7 @@ import urllib
 from datetime import datetime, time, date
 import time
 import vk_api
+import TeleBot
 
 def change_status(text):	
 	status = {'text': text}
@@ -36,6 +37,7 @@ k = 0
 
 
 while  a == 1:
+	TeleBot.sendCaptcha()
 	k = k + 1
 	for x in xrange(1,10):
 		d = datetime.today()	
