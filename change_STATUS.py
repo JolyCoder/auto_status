@@ -2,7 +2,7 @@ import urllib
 from datetime import datetime, time, date
 import time
 import vk_api
-import TeleBot
+#import TeleBot
 
 def change_status(text):	
 	status = {'text': text}
