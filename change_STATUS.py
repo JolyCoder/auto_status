@@ -8,10 +8,19 @@ a = 1
 # Переменные #
 
 # Функции #
-def auth(vkLogin, vkPass, captchaHandler):
+def auth(vkLogin1, vkPass1, captchaHandler1, vkLogin2, vkPass2, captchaHandler2, vkLogin3, vkPass3, captchaHandler3,count):
 	key = ""
 	vk = vk_api.VkApi(login = vkLogin, password = vkPass, captcha_handler=captchaHandler)
 	vk.auth()
+	if count == 1:
+		vk = vk_api.VkApi(login = vkLogin1, password = vkPass1, captcha_handler=captchaHandler1)
+	elif count == 2:
+		vk = vk_api.VkApi(login = vkLogin1, password = vkPass1, captcha_handler=captchaHandler1)
+		vk2 = vk_api.VkApi(login = vkLogin2, password = vkPass2, captcha_handler=captchaHandler2)
+	elif count == 3:
+		vk = vk_api.VkApi(login = vkLogin1, password = vkPass1, captcha_handler=captchaHandler1)
+		vk = vk_api.VkApi(login = vkLogin2, password = vkPass2, captcha_handler=captchaHandler2)
+		vk = vk_api.VkApi(login = vkLogin3, password = vkPass3, captcha_handler=captchaHandler3)
 	k = 0
 
 def change_status(text):	
@@ -35,7 +44,7 @@ def captcha_handler(captcha):
 # Функции #
 
 # Авторизация #
-auth('login', 'password', captcha_handler)
+auth('login1', 'password1', captcha_handler)
 # Авторизация #
 
 # Основной код, по изменению статуса #
