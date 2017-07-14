@@ -2,7 +2,17 @@ import urllib
 from datetime import datetime, time, date
 import time
 import vk_api
-#import TeleBot
+
+# Переменные #
+a = 1
+# Переменные #
+
+# Функции #
+def auth(vkLogin, vkPass, captchaHandler):
+	key = ""
+	vk = vk_api.VkApi(login = vkLogin, password = vkPass, captcha_handler=captchaHandler)
+	vk.auth()
+	k = 0
 
 def change_status(text):	
 	status = {'text': text}
@@ -22,21 +32,14 @@ def captcha_handler(captcha):
     captcha_get(key)
 
     return captcha.try_again(key)
+# Функции #
 
-key = ""
-vk = vk_api.VkApi(login = 'login', password = 'password', captcha_handler=captcha_handler)
-vk2 = vk_api.VkApi(login = 'login', password = 'password', captcha_handler=captcha_handler)
-vk.auth()
-vk2.auth()
-a = 1
-k = 0
+# Авторизация #
+auth('login', 'password', captcha_handler)
+# Авторизация #
 
-
-
-
-
-
-while  a == 1:
+# Основной код, по изменению статуса #
+while  a == 1:	
 	#TeleBot.sendCaptcha()
 	k = k + 1
 	for x in xrange(1,10):
@@ -53,4 +56,4 @@ while  a == 1:
 		change_status(tex)
 		print "SENDED!"
 		time.sleep(20)
-		
+# Основной код, по изменению статуса #
