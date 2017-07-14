@@ -37,7 +37,7 @@ k = 0
 
 
 while  a == 1:
-	TeleBot.sendCaptcha()
+	#TeleBot.sendCaptcha()
 	k = k + 1
 	for x in xrange(1,10):
 		d = datetime.today()	
@@ -53,6 +53,4 @@ while  a == 1:
 		change_status(tex)
 		print "SENDED!"
 		time.sleep(20)
-
-
-
+		
