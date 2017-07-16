@@ -1,6 +1,11 @@
 <h1 align="center"> Auto - status</h1>
 <h2 align="center">Что это?</h2>
 <p>Auto_Status - это программа которая позволяет переодически менять статус в ВК.</p>
+<h2 align="center">Используемые библиотеки :
+urllib
+vk_api
+telebot
+</h2>
 <h2 align="center">Настройка</h2>
 <p>Для того чтобы настроить скрипт, нужно изменить под себя файл TeleBot1.py</p>
 
