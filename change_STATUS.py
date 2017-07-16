@@ -34,7 +34,7 @@ def captcha_handler(captcha):
 
     key = captcha.get_url()
     captcha_get(key)
-    TeleBot1.sendCaptcha('key')
+    TeleBot1.sendCaptcha(key)
     return captcha.try_again(key)
 # Функции #
 
