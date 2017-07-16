@@ -39,7 +39,7 @@ def captcha_handler(captcha):
 # Функции #
 
 # Авторизация #
-vk = vk_api.VkApi(login = VKlog1, password = VKpass1, captcha_handler=captcha_handler)
+vk = vk_api.VkApi(login = config.VKlog1, password = config.VKpass1, captcha_handler=captcha_handler)
 vk.auth()
 # Авторизация #
 
