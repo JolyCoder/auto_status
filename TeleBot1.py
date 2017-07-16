@@ -1,3 +1,7 @@
+#!/usr/bin/env python 
+# -*- coding: utf-8 -*- 
+
+
 import change_STATUS
 import TeleSettings
 import telebot

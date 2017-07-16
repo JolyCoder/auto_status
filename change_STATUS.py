@@ -1,10 +1,15 @@
 #!/usr/bin/env python 
 # -*- coding: utf-8 -*- 
 
+
+
+# Используемые библиотеки и файлы #
 import urllib
 from datetime import datetime, time, date
 import time
 import vk_api
+import logandpass
+# Используемые библиотеки и файлы #
 
 # Переменные #
 a = 1
@@ -50,6 +55,8 @@ def captcha_handler(captcha):
 
     return captcha.try_again(key)
 # Функции #
+
+print(logandpass.token)
 
 # Авторизация #
 auth(3, 'login1', 'password1', captcha_handler)
