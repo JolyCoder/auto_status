@@ -8,38 +8,20 @@ import urllib
 from datetime import datetime, time, date
 import time
 import vk_api
-import logandpass
+import config
+import TeleBot1
 # Используемые библиотеки и файлы #
 
 # Переменные #
 a = 1
+vk = ''
 # Переменные #
 
 # Функции #
-def auth(count, vkLogin1 = '', vkPass1 = '', captchaHandler1 = '', vkLogin2 = '', vkPass2 = '', captchaHandler2 = '', vkLogin3 = '', vkPass3 = '', captchaHandler3 = ''):
-	key = ""
-	vk = vk_api.VkApi(login = vkLogin1, password = vkPass1, captcha_handler=captchaHandler1)
-	if count == 1:
-		vk = vk_api.VkApi(login = vkLogin1, password = vkPass1, captcha_handler=captchaHandler1)
-		vk.auth()
-	elif count == 2:
-		vk = vk_api.VkApi(login = vkLogin1, password = vkPass1, captcha_handler=captchaHandler1)
-		vk.auth()
-		vk2 = vk_api.VkApi(login = vkLogin2, password = vkPass2, captcha_handler=captchaHandler2)
-		vk2.auth()
-	elif count == 3:
-		vk = vk_api.VkApi(login = vkLogin1, password = vkPass1, captcha_handler=captchaHandler1)
-		vk.auth()
-		vk2 = vk_api.VkApi(login = vkLogin2, password = vkPass2, captcha_handler=captchaHandler2)
-		vk2.auth()
-		vk3= vk_api.VkApi(login = vkLogin3, password = vkPass3, captcha_handler=captchaHandler3)
-		vk3.auth()
-	k = 0
-
 def change_status(text):	
 	status = {'text': text}
 	vk.method('status.set', status)
-	vk2.method('status.set', status)
+	# vk2.method('status.set', status)
 
 def captcha_get(key):
 	resource = urllib.urlopen(key)
@@ -52,20 +34,18 @@ def captcha_handler(captcha):
 
     key = captcha.get_url()
     captcha_get(key)
-
+    TeleBot1.sendCaptcha('key')
     return captcha.try_again(key)
 # Функции #
 
-print(logandpass.token)
-
 # Авторизация #
-auth(3, 'login1', 'password1', captcha_handler)
+vk = vk_api.VkApi(login = 'none', password = 'none', captcha_handler=captcha_handler)
+vk.auth()
 # Авторизация #
 
 # Основной код, по изменению статуса #
 while  a == 1:	
 	#TeleBot.sendCaptcha()
-	k = k + 1
 	for x in xrange(1,10):
 		d = datetime.today()	
 		t = str(d.time())
@@ -79,5 +59,5 @@ while  a == 1:
 		tex = 'NOW %s' % tm 
 		change_status(tex)
 		print "SENDED!"
-		time.sleep(20)
+		time.sleep(5)
 # Основной код, по изменению статуса #
