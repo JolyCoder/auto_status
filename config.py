@@ -3,12 +3,12 @@
 
 # Настройки Telegram #
 k = 'dgfdg'
-token = 'token'
+token = '419166155:AAGum6K8g6iQ108JYqk96wSTyqUSs26eIMQ'
 # Настройки Telegram #
 
 # Настройки ВК #
-VKlog1 = 'none'
-VKpass1 = 'none'
+VKlog1 = '79888726851'
+VKpass1 = '89888726851i'
 VKlog2 = 'VKlogin2'
 VKpass2 = 'VKpassword2'
 VKlog3 = 'VKlogin3'

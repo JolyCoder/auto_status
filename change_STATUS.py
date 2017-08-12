@@ -35,7 +35,9 @@ def captcha_handler(captcha):
     key = captcha.get_url()
     captcha_get(key)
     TeleBot1.sendCaptcha(key)
-    return captcha.try_again(key)
+    time.sleep(30)
+    print(TeleBot1.captcha)
+    return captcha.try_again(TeleBot1.captcha)
 # Функции #
 
 # Авторизация #
