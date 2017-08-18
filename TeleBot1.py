@@ -3,10 +3,16 @@
 
 
 import telebot
-import config
+import json
 
+# JSON #
 
-bot = telebot.TeleBot(config.token)
+raw_cred = open('config.json').read()
+cred = json.loads(raw_cred)
+
+# JSON #
+
+bot = telebot.TeleBot(cred["token"])
 
 captcha = ' '
 def sendCaptcha(text): # Название функции не играет никакой роли, в принципе

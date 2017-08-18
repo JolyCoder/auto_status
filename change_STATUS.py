@@ -8,14 +8,22 @@ import urllib
 from datetime import datetime, time, date
 import time
 import vk_api
-import config
 import TeleBot1
+import json
 # Используемые библиотеки и файлы #
 
 # Переменные #
 a = 1
 vk = ''
 # Переменные #
+
+# JSON #
+
+raw_cred = open('config.json').read()
+cred = json.loads(raw_cred)
+
+# JSON #
+
 
 # Функции #
 def change_status(text):	
